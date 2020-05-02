@@ -36,7 +36,7 @@
 		"font-awesome": "^4.7.0",
 		"glyphicons": "^0.2.0",
 		"html2canvas": "0.5.0-beta4",
-		"jquery": "^3.4.1",
+		"jquery": "^3.5.0",
 		"mat-progress-buttons": "^8.0.7",
 		"ng-multiselect-dropdown": "^0.2.10",
 		"ng2-charts": "^2.2.5",
