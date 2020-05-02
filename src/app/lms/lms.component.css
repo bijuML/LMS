@@ -1,0 +1,105 @@
+/* .title {
+	margin-top: 5% !important;
+}
+
+.form-control, .btn {
+	height: 50px !important;
+	width: 400px !important;
+	margin-right: 50px !important;
+}
+
+.cancel-btn {
+	background: #e9ecef;
+}
+
+The message box is shown when the user clicks on the password field
+#PSWstrengthContainer {
+	display: block;
+	background: #f8f9fa;
+	color: #000;
+	position: relative;
+	padding: 10px 30px;
+	margin-top: 10px;
+	width: 400px;
+	margin-left: 37.5%;
+}
+
+#PSWstrengthContainer p {
+	padding: 0px 35px;
+	font-size: 13px;
+}
+
+Add a green text color and a checkmark when the requirements are right
+.valid {
+	color: green;
+}
+
+.valid:before {
+	position: relative;
+	left: -35px;
+	content: "✔";
+}
+
+Add a red text color and an "x" when the requirements are wrong
+.invalid {
+	color: red;
+}
+
+.invalid:before {
+	position: relative;
+	left: -35px;
+	content: "✖";
+}
+
+
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*
+
+.rounded-lg {
+	border-radius: 1rem !important;
+}
+
+.text-small {
+	font-size: 0.9rem !important;
+}
+
+.custom-separator {
+	width: 5rem;
+	height: 6px;
+	border-radius: 1rem;
+}
+
+.text-uppercase {
+	letter-spacing: 0.2em;
+} */
+.mb-3 {
+	line-height: 1.5;
+	color: #555;
+	font-family: 'Lato', sans-serif;
+	font-size: 14px;
+	text-align: center;
+}
+
+#padding {
+	padding: 2rem !important;
+}
+
+h1 {
+	color: #4996a6;
+}
+
+h2 {
+	color: #3ca928;
+}
+
+h5 {
+	font-style: italic;
+	color: #4996a5;
+}
+
+.extraMargin {
+	margin-top: 5% !important;
+}

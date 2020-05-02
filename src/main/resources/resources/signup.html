@@ -1,0 +1,336 @@
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Please sign in</title>
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+	integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+	crossorigin="anonymous">
+
+<link
+	href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css"
+	rel="stylesheet" crossorigin="anonymous" />
+</head>
+<style>
+
+/* sign in FORM */
+#logreg-forms {
+	width: 412px;
+	margin: 0vh auto;
+	background-color: #f3f3f3;
+	box-shadow: 0 10px 31px rgba(0, 0, 0, 0.12), 0 10px 12px
+		rgba(0, 0, 0, 0.24);
+	transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+#logreg-forms form {
+	width: 100%;
+	max-width: 410px;
+	padding: 15px;
+	margin: auto;
+}
+
+#logreg-forms .form-control {
+	position: relative;
+	box-sizing: border-box;
+	height: auto;
+	padding: 10px;
+	font-size: 16px;
+}
+
+#logreg-forms .form-control:focus {
+	z-index: 2;
+}
+
+#logreg-forms .form-signin input[type="email"] {
+	margin-bottom: -1px;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+#logreg-forms .form-signin input[type="password"] {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+#logreg-forms .social-login {
+	width: 390px;
+	margin: 0 auto;
+	margin-bottom: 14px;
+}
+
+#logreg-forms .social-btn {
+	font-weight: 100;
+	color: white;
+	width: 190px;
+	font-size: 0.9rem;
+}
+
+#logreg-forms a {
+	display: block;
+	padding-top: 10px;
+	color: lightseagreen;
+}
+
+#logreg-form .lines {
+	width: 200px;
+	border: 1px solid red;
+}
+
+#logreg-forms button[type="submit"] {
+	margin-top: 10px;
+}
+
+#logreg-forms .facebook-btn {
+	background-color: #3C589C;
+}
+
+#logreg-forms .google-btn {
+	background-color: #DF4B3B;
+}
+
+#logreg-forms .form-signup .social-btn {
+	width: 210px;
+}
+
+#logreg-forms .form-signup input {
+	margin-bottom: 12px;
+}
+
+.form-signup .social-login {
+	width: 210px !important;
+	margin: 0 auto;
+}
+
+/* Mobile */
+@media screen and (max-width:500px) {
+	#logreg-forms {
+		width: 300px;
+	}
+	#logreg-forms  .social-login {
+		width: 200px;
+		margin: 0 auto;
+		margin-bottom: 10px;
+	}
+	#logreg-forms  .social-btn {
+		font-size: 1.3rem;
+		font-weight: 100;
+		color: white;
+		width: 200px;
+		height: 56px;
+	}
+	#logreg-forms .social-btn:nth-child(1) {
+		margin-bottom: 5px;
+	}
+	#logreg-forms .social-btn span {
+		display: none;
+	}
+	#logreg-forms  .facebook-btn:after {
+		content: 'Facebook';
+	}
+	#logreg-forms  .google-btn:after {
+		content: 'Google+';
+	}
+}
+
+button {
+	cursor: pointer;
+	pointer-events: none;
+	opacity: 0.5;
+}
+
+/* The message box is shown when the user clicks on the password field */
+#PSWstrengthContainer {
+	display: block;
+	background: #f8f9fa;
+	color: #000;
+	position: relative;
+	padding: 10px 30px;
+	margin-top: 10px;
+}
+
+#PSWstrengthContainer p {
+	padding: 0px 35px;
+	font-size: 13px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+	color: green;
+}
+
+.valid:before {
+	position: relative;
+	left: -35px;
+	content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+	color: red;
+}
+
+.invalid:before {
+	position: relative;
+	left: -35px;
+	content: "✖";
+}
+</style>
+<script>
+	var check = function() {
+		var myInput = document.getElementById("user-pass");
+		var letter = document.getElementById("letter");
+		var capital = document.getElementById("capital");
+		var number = document.getElementById("number");
+		var splCharacter = document.getElementById("splCharacter");
+		var length = document.getElementById("length");
+
+		if (document.getElementById('user-pass').value == document
+				.getElementById('user-repeatpass').value
+				&& document.getElementById('user-pass').value != ""
+				&& document.getElementById('user-repeatpass').value != ""
+				&& document.getElementById('user-repeatpass').value != "") {
+			document.getElementById('message').style.color = 'green';
+			document.getElementById('message').innerHTML = 'matching';
+			document.getElementById("submit").style.pointerEvents = "auto";
+			document.getElementById("submit").style.opacity = "1";
+		} else {
+			document.getElementById('message').style.color = 'red';
+			document.getElementById('message').innerHTML = 'not matching';
+			document.getElementById("submit").style.pointerEvents = "none";
+			document.getElementById("submit").style.opacity = "0.5";
+		}
+		if (document.getElementById('user-pass').value == ""
+				&& document.getElementById('user-repeatpass').value == "") {
+
+			document.getElementById('message').style.color = 'red';
+			document.getElementById('message').innerHTML = 'enter your password';
+			document.getElementById("submit").style.pointerEvents = "none";
+			document.getElementById("submit").style.opacity = "0.5";
+		}
+
+		// Validate lowercase letters
+		var lowerCaseLetters = /[a-z]/g;
+		if (myInput.value.match(lowerCaseLetters)) {
+			letter.classList.remove("invalid");
+			letter.classList.add("valid");
+		} else {
+			letter.classList.remove("valid");
+			letter.classList.add("invalid");
+		}
+
+		// Validate capital letters
+		var upperCaseLetters = /[A-Z]/g;
+		if (myInput.value.match(upperCaseLetters)) {
+			capital.classList.remove("invalid");
+			capital.classList.add("valid");
+		} else {
+			capital.classList.remove("valid");
+			capital.classList.add("invalid");
+		}
+
+		// Validate numbers
+		var numbers = /[0-9]/g;
+		if (myInput.value.match(numbers)) {
+			number.classList.remove("invalid");
+			number.classList.add("valid");
+		} else {
+			number.classList.remove("valid");
+			number.classList.add("invalid");
+		}
+
+		//validate special character
+		var splCharacters = /(?=.*[!@#$%^&*])/g;
+		if (myInput.value.match(splCharacters)) {
+			splCharacter.classList.remove("invalid");
+			splCharacter.classList.add("valid");
+		} else {
+			splCharacter.classList.remove("valid");
+			splCharacter.classList.add("invalid");
+		}
+
+		// Validate length
+		if (myInput.value.length >= 8) {
+			length.classList.remove("invalid");
+			length.classList.add("valid");
+		} else {
+			length.classList.remove("valid");
+			length.classList.add("invalid");
+		}
+		if (myInput.value.match(lowerCaseLetters)
+				&& myInput.value.match(upperCaseLetters)
+				&& myInput.value.match(numbers)
+				&& myInput.value.match(splCharacters)
+				&& myInput.value.length >= 8) {
+			document.getElementById('PSWstrengthContainer').style.display = "none";
+		} else {
+			document.getElementById('PSWstrengthContainer').style.display = "block";
+		}
+	}
+</script>
+<body>
+	<div id="logreg-forms">
+		<form action="/signupValidate" class="form-signup" method="POST">
+
+			<p style="text-align: center">Please fill in this form to create
+				an account</p>
+
+			<input type="text" id="user-name" name="UserName"
+				class="form-control" placeholder="Full name" required=""
+				autofocus=""> <input type="email" id="user-email"
+				name="email" class="form-control" placeholder="Email address"
+				required autofocus=""> <input type="password" id="user-pass"
+				name="psw" class="form-control" onkeyup="check();"
+				pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+				title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+				placeholder="Password" required autofocus=""> <input
+				type="password" id="user-repeatpass" name="psw_repeat"
+				onkeyup="check()" class="form-control" placeholder="Repeat Password"
+				required autofocus=""> <span id="message"></span> <input
+				list="userroles" name="userRole" class="form-control"
+				placeholder="User Role" required />
+			<datalist id="userroles">
+				<option value="Admin">
+				<option value="User">
+			</datalist>
+			<button class="btn btn-primary btn-block" id="submit" type="submit">
+				<i class="fas fa-user-plus"></i> Sign Up
+			</button>
+
+		</form>
+
+		<div id="PSWstrengthContainer">
+			<h6>Password must contain the following:</h6>
+			<p id="letter" class="invalid">
+				A <b>lowercase</b> letter
+			</p>
+			<p id="capital" class="invalid">
+				A <b>capital (uppercase)</b> letter
+			</p>
+			<p id="number" class="invalid">
+				A <b>number</b>
+			</p>
+			<p id="splCharacter" class="invalid">
+				A <b>Special Character</b>
+			</p>
+			<p id="length" class="invalid">
+				Minimum <b>8 characters</b>
+			</p>
+		</div>
+
+	</div>
+
+
+</body>
+
+</html>

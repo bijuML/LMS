@@ -1,0 +1,321 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+::ng-deep .blue-snackbar {
+	background: rgb(0, 101, 184) !important;
+	color: rgb(255, 255, 255)
+}
+
+.boldnames {
+	font-weight: bold !important;
+	color: #000000 !important;
+}
+
+.body-bgcolor {
+	background: #F3F5F8 !important;
+}
+
+.test {
+	white-space: pre-line !important;
+}
+
+.full-width {
+	width: 100% !important;
+}
+
+.full-height {
+	height: 100% !important;
+}
+
+.hide {
+	display: none !important;
+	min-height: 0px !important;
+	max-height: 0px !important;
+	height: 0px !important;
+	width: 0px !important;
+	border: 0px !important;
+}
+
+.zeroMargin {
+	margin: 0 !important;
+}
+
+.cursor-pointer:hover {
+	cursor: pointer;
+}
+
+.cursor-default:hover {
+	cursor: default;
+}
+
+.floatLeft {
+	float: left !important;
+}
+
+.floatRight {
+	float: right !important;
+}
+
+.adminPage-sidebar {
+	background: #2B333E !important;
+}
+
+/* for text color */
+.color {
+	color: #00a591 !important;
+}
+
+/* text or icon color for circular buttons */
+.icon-btn-color {
+	color: #5b81a7 !important;
+}
+
+/* for button background color */
+.backgroungColor {
+	color: #fff !important;
+	background: #00A591 !important;
+}
+
+/* for disabled button */
+.backgroungColor:disabled, .submit-btn:disabled, .btn-primary:disabled,
+	.primary_btn:disabled {
+	opacity: 0.5;
+}
+
+/* for check boxes */
+.mat-checkbox-checked.mat-accent .mat-checkbox-background,
+	.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+	background-color: #537190 !important;
+}
+
+/* for buttons on dual-list */
+.btn-primary {
+	background: #17a2b8 !important;
+	border: none !important;
+}
+
+fieldset {
+	border: 5px solid #fff !important;
+	background: #fff !important;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, .08) !important;
+	border-radius: 10px !important;
+}
+
+legend {
+	padding: .2em .5em !important;
+	border: 1px solid #ffffff !important;
+	background: #f8f9fa !important;
+	color: #17a2b8 !important;
+	font-size: 90% !important;
+	font-weight: 600 !important;
+	margin-left: -5px !important;
+	margin-right: 0px !important;
+	width: 101% !important;
+	max-width: 110% !important;
+	border-radius: 5px 5px 0 0 !important;
+}
+
+th.mat-header-cell {
+	color: #6c757d !important;
+	font-weight: 600 !important;
+	white-space: nowrap !important;
+}
+
+.mat-expansion-panel-header-title {
+	color: #17a2b8 !important;
+}
+
+.mat-expansion-indicator::after, .mat-expansion-panel-header-description
+	{
+	color: #17a2b8 !important;
+}
+
+.mat-dialog-container {
+	padding: 0px !important;
+}
+
+.mat-dialog-content {
+	display: inline-block;
+	margin: 0px 0px !important;
+	min-width: 100%;
+}
+
+.mat-dialog-actions {
+	margin-bottom: 10px !important;
+}
+
+.mat-drawer-container {
+	background-color: #f3f5f8;
+}
+
+.mat-sidenav-content {
+	background: #fff;
+}
+
+.mat-drawer-inner-container {
+	background: #f3f5f8;
+}
+
+#matDialog-title {
+	margin: 0px !important;
+	padding: 1% 3%;
+	background: #e0eefd;
+}
+
+#tinyDialog-title {
+	font-weight: 600;
+	font-size: 17px;
+}
+
+#tinyDialog-content {
+	width: 300px;
+}
+
+#matDialog-actions {
+	margin-bottom: 0px !important;
+	background: #f3f3f3;
+	border-top: 1px solid #e2e2e2;
+}
+
+.centerText {
+	text-align: center;
+}
+
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1) !important;
+	border-radius: 10px !important;
+}
+
+::-webkit-scrollbar {
+	width: 8px !important;
+	height: 8px !important;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 10px !important;
+	border: none !important;
+	background: #c0c0c0 !important;
+}
+
+.valid {
+	color: green;
+}
+
+.valid:before {
+	padding-left: 75px;
+	content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+	color: red;
+}
+
+.invalid:before {
+	padding-left: 75px;
+	content: "✖";
+}
+
+.mat-select-panel {
+	font-size: 12px !important;
+}
+
+.mat-cell, .mat-footer-cell {
+	font-size: small;
+	padding: 0px 1px !important;
+}
+
+/* div for showing server msg */
+.alert {
+	width: 90%;
+	margin: 0% 5%;
+}
+
+#mat-bar-btn {
+	float: right;
+	margin-top: -5%;
+	margin-right: 3%;
+}
+
+#mat-bar-btn button, #fetchOpps-btn button {
+	background: #17a2b8 !important;
+}
+
+.primary_btn {
+	background-color: #17a2b8 !important;
+	color: #fff !important;
+	margin-right: 1% !important;
+}
+
+.red_snackbar {
+	background: red;
+	color: #fff;
+}
+
+.info_icon, .help_icon, .emailInfo_icon, .keywordInfo_icon, .fetchOppsinfo_icon,
+	.pop_info_icon, .zipcode_info_icon {
+	color: #128692;
+}
+
+.dropdown-list {
+	position: relative !important;
+	width: 100% !important;
+}
+
+/* for user Icon in header */
+.userIcon {
+	color: #0396A6 !important;
+}
+
+.mat-tab-label {
+	color: white;
+	min-width: 25px !important;
+	padding: 5px;
+	background-color: transparent;
+	color: #0396A6;
+	font-weight: 700;
+}
+
+/
+deep / .mat-tab-label {
+	min-width: 25px !important;
+	padding: 5px;
+	background-color: transparent;
+	color: #0396A6;
+	font-weight: 700;
+}
+
+.md-tab.ng-scope.ng-isolate-scope.md-ink-ripple.md-active {
+	background-color: transparent;
+	color: #0396A6;
+	font-weight: 700;
+}
+
+.md-tab.ng-scope.ng-isolate-scope.md-ink-ripple {
+	background-color: transparent;
+	color: #0396A6;
+	font-weight: 700;
+}
+
+.mat-tab-label:active {
+	min-width: 25px !important;
+	padding: 5px;
+	background-color: transparent;
+	color: #0396A6;
+	font-weight: 700;
+}
+
+.mat-tab-label:selected {
+	min-width: 25px !important;
+	padding: 5px;
+	background-color: transparent;
+	color: #0396A6;
+	font-weight: 700;
+}
+
+.mat-tab-body-content {
+    height: 100%;
+    overflow: hidden !important;;
+}

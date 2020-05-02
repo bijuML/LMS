@@ -1,0 +1,77 @@
+<div class="body-bgcolor"
+	style="height: 100%; position: fixed; width: 100%; max-width: 100%; overflow: auto;">
+	<div align="center" style="margin-top: 3%; margin-left: 10%;"
+		[ngClass]="{ 'extraMargin':  !expiryDate }">
+		<h5>Library Management System</h5>
+	</div>
+	<div>
+		<div>
+			<table mat-table [dataSource]="dataSource">
+
+				<!-- User Name Column -->
+				<ng-container matColumnDef="libraryName">
+				<th mat-header-cell *matHeaderCellDef align="left">Library Name</th>
+				<td mat-cell *matCellDef="let element">{{element.libraryName}}</td>
+				</ng-container>
+
+				<!-- Company Name Column -->
+				<ng-container matColumnDef="librarianName">
+				<th mat-header-cell *matHeaderCellDef>Librarian Name</th>
+				<td mat-cell *matCellDef="let element">{{element.librarianName}}</td>
+				</ng-container>
+
+				<!-- Phone Column -->
+				<ng-container matColumnDef="libraryPhone">
+				<th mat-header-cell *matHeaderCellDef>Library Phone</th>
+				<td mat-cell *matCellDef="let element">{{element.libraryPhone}}</td>
+				</ng-container>
+
+				<!-- Action Column -->
+				<ng-container matColumnDef="action">
+				<th mat-header-cell *matHeaderCellDef>Action</th>
+				<td mat-cell *matCellDef="let element" class="color"><span
+					class="cursor-pointer" matTooltip="More"> <fa
+							name="angle-double-right" (click)="getBooks(element);"></fa></span></td>
+				</ng-container>
+
+				<tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+				<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+			</table>
+		</div>
+		
+				<div>
+			<table mat-table [dataSource]="bookDatasource">
+
+				<!-- User Name Column -->
+				<ng-container matColumnDef="bookTitle">
+				<th mat-header-cell *matHeaderCellDef align="left">Book Title</th>
+				<td mat-cell *matCellDef="let element">{{element.bookTitle}}</td>
+				</ng-container>
+
+				<!-- Company Name Column -->
+				<ng-container matColumnDef="bookISBN">
+				<th mat-header-cell *matHeaderCellDef>ISBN</th>
+				<td mat-cell *matCellDef="let element">{{element.bookISBN}}</td>
+				</ng-container>
+
+				<!-- Phone Column -->
+				<ng-container matColumnDef="bookAuthor">
+				<th mat-header-cell *matHeaderCellDef>Author</th>
+				<td mat-cell *matCellDef="let element">{{element.bookAuthor}}</td>
+				</ng-container>
+
+				<!-- Action Column -->
+				<ng-container matColumnDef="action">
+				<th mat-header-cell *matHeaderCellDef>Action</th>
+				<td mat-cell *matCellDef="let element" class="color"><span
+					class="cursor-pointer" matTooltip="More"> <fa
+							name="angle-double-right" (click)="getBooks(element);"></fa></span></td>
+				</ng-container>
+
+				<tr mat-header-row *matHeaderRowDef="bookColumns; sticky: true"></tr>
+				<tr mat-row *matRowDef="let row; columns: bookColumns;"></tr>
+			</table>
+		</div>
+	</div>
+
+</div>
