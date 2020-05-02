@@ -50,7 +50,7 @@ public class BookController {
 
 	@GetMapping("/book/{bookid}")
 	@ResponseBody
-	private Book getBooks(@PathVariable("bookid") int bookId) {
+	public Book getBookById(@PathVariable("bookid") int bookId) {
 		Book book = bookService.getBooksById(bookId);
 		System.out.println("Book Title is-->" + book.getBookTitle());
 		return book;
@@ -58,14 +58,14 @@ public class BookController {
 
 	@PostMapping("/book")
 	@ResponseBody
-	private Book persistBook(@RequestBody Book book) {
+	public Book persistBook(@RequestBody Book book) {
 		bookService.saveOrUpdate(book);
 		return book;
 	}
 
 	@PutMapping("/book")
 	@ResponseBody
-	private Book updateBook(@RequestBody Book book) {
+	public Book updateBook(@RequestBody Book book) {
 		bookService.updateBook(book);
 		return book;
 	}
