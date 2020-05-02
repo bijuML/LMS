@@ -3,8 +3,8 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { HttpClient } from "@angular/common/http";
 import { Ng4LoadingSpinnerService } from "ng4-loading-spinner";
 import { MatTableDataSource } from '@angular/material/table';
-import { Library } from './Library';
-import { Book } from './Book';
+import { Library } from '../entity/Library';
+import { Book } from '../entity/Book';
 import { Router } from "@angular/router";
 
 
@@ -15,10 +15,11 @@ import { Router } from "@angular/router";
 
 export class LMSComponent implements OnInit {
     displayedColumns: string[] = ['libraryName', 'librarianName', 'libraryPhone', 'action'];
-    dataSource = new MatTableDataSource<any>();
+    dataSource = new MatTableDataSource<Library>();
+    bookTableShow = false;
     
     bookColumns: string[] = ['bookTitle', 'bookISBN', 'bookAuthor'];
-    bookDatasource = new MatTableDataSource<any>(); 
+    bookDatasource = new MatTableDataSource<Book>(); 
     constructor( private router: Router, private http: HttpClient, private spinnerService: Ng4LoadingSpinnerService ) { }
 
     ngOnInit() {
@@ -37,6 +38,7 @@ export class LMSComponent implements OnInit {
             this.bookDatasource.data = data;
             console.log( "books table has records-->" + this.bookDatasource.data.length );
             this.spinnerService.hide();
+            this.bookTableShow = true;
         } );
     }
 }
