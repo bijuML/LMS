@@ -3,44 +3,47 @@ package com.library.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.library.entity.Book;
 import com.library.entity.Library;
+import com.library.exceptionhandler.BookNotFoundException;
 import com.library.repository.BookRepo;
 import com.library.repository.LibraryRepo;
 
 @Service
-public class BookService {
+public class BookServiceImpl implements IBookService{
 
 	@Autowired
 	private BookRepo bookRepo;
 
 	@Autowired
 	private LibraryRepo libRepo;
-
-	public List<Book> getAllBooks() throws DataAccessException, JsonProcessingException {
+	
+	@Override
+	public List<Book> getAllBooks() {
 		return bookRepo.findAll();
 	}
-
-	public Book getBooksById(int id) {
-		return bookRepo.findById(id).get();
+	@Override
+	public Book getBookById(int id) {
+		if (!bookRepo.existsById(id))
+			throw new BookNotFoundException();
+		else
+			return bookRepo.findById(id).get();
 	}
-
-	public void saveOrUpdate(Book books) {
-		bookRepo.save(books);
+	@Override
+	public Book save(Book book) {
+		return bookRepo.save(book);
 	}
-
+	@Override
 	public void updateBook(Book book) {
 		bookRepo.save(book);
 	}
-
-	public List<Library> getAllLibs() throws DataAccessException, JsonProcessingException {
+	@Override
+	public List<Library> getAllLibs() {
 		return libRepo.findAll();
 	}
-
+	@Override
 	public List<Book> getBooksByLibId(Integer libId) {
 		return bookRepo.findAllByLibraryId(libId);
 	}

@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.library</groupId>
-	<artifactId>GOVOPPSCRM</artifactId>
+	<artifactId>LMS</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>LMS</name>
@@ -52,6 +52,8 @@
 	</dependencies>
 	<build>
 		<plugins>
+			<!-- mvn spring-boot:run -Drun.arguments=- -env=UAT; mvn package spring-boot:repackage 
+				-Dmaven.test.skip=true -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
@@ -85,7 +87,7 @@
 							<arguments>run-script build</arguments>
 						</configuration>
 					</execution>
-					<execution>
+<!-- 					<execution>
 						<id>npm-test</id>
 						<goals>
 							<goal>npm</goal>
@@ -94,7 +96,7 @@
 							<arguments>run-script e2e</arguments>
 						</configuration>
 						<phase>test</phase>
-					</execution>
+					</execution> -->
 				</executions>
 			</plugin>
 		</plugins>
