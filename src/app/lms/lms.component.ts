@@ -17,9 +17,9 @@ export class LMSComponent implements OnInit {
     displayedColumns: string[] = ['libraryName', 'librarianName', 'libraryPhone', 'action'];
     dataSource = new MatTableDataSource<Library>();
     bookTableShow = false;
-    
+
     bookColumns: string[] = ['bookTitle', 'bookISBN', 'bookAuthor'];
-    bookDatasource = new MatTableDataSource<Book>(); 
+    bookDatasource = new MatTableDataSource<Book>();
     constructor( private router: Router, private http: HttpClient, private spinnerService: Ng4LoadingSpinnerService ) { }
 
     ngOnInit() {
@@ -32,13 +32,10 @@ export class LMSComponent implements OnInit {
         } );
     }
 
-    getBooks(lib: any) {
-        this.http.get( 'http://localhost:8080/getBooksByLibId/'+ lib.id).subscribe(( data: any[] ) => {
-            this.spinnerService.show();
-            this.bookDatasource.data = data;
-            console.log( "books table has records-->" + this.bookDatasource.data.length );
-            this.spinnerService.hide();
-            this.bookTableShow = true;
-        } );
+    getBooks( lib: any ) {
+        this.spinnerService.show();
+        this.bookDatasource.data = lib.books;
+        this.spinnerService.hide();
+        this.bookTableShow = true;
     }
 }
